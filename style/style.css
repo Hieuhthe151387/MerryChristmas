@@ -1,0 +1,138 @@
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+      "Liberation Mono", "Courier New", monospace;
+}
+  
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background: radial-gradient(#de1b23,#3c1f21);
+}
+
+#section{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+}
+
+#star-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#star-container img{
+    z-index: 1000;
+    position: relative;
+    opacity: 0;
+    width: 2rem;
+    height: 2rem;
+    transform: scale(calc(0.1 * var(--i)));
+    animation:star 2s linear infinite;
+    animation-delay: calc(0.2s * var(--i));
+}
+
+@keyframes star{
+    0%{
+        opacity: 1;
+        top:0%;
+    }
+    50%{
+        opacity: .5;
+        top:50%
+    }
+    95%{
+        opacity: 1;
+        top:100%
+    }
+}
+
+#section>h1{
+    position: absolute;
+    max-width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-30%);
+    z-index: 100;
+}
+
+h1>p{
+    position: relative;
+    color: var(--white);
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+
+img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation:  animate 2s ease-in-out forwards;
+}
+
+@keyframes animate {
+    from{
+        transform: translateY(40px) scale(1.1);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(40px) scale(1.1);
+        opacity: 1;
+    }
+    
+}
+/* 
+img[src*="christmas-tree"]:first-of-type{
+    object-position: left;
+}
+
+img[src*="christmas-tree"]:last-of-type{
+    object-position: right;
+} */
